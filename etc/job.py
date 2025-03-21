@@ -14,10 +14,10 @@ def send_email(title: str) -> None:
     msg['To'] = ", ".join(to_addr)
     msg['Subject'] = title
     body= "일자리 사업 공고 올라옴"
-    msg.attach(MIMEText(body, 'plain'))~~
+    msg.attach(MIMEText(body, 'plain'))
 
     server = smtplib.SMTP('smtp.gmail.com', 587)
-    server.ehlo(~~
+    server.ehlo()
     server.starttls()
     server.login(from_addr, "1234567890")
     text = msg.as_string()
@@ -47,5 +47,5 @@ if crolling_body.find("일자리") != -1:
     title= "일자리 사업 공고 올라옴"
     send_email(title)
 else:
-    /"일자리 사업 공고 없음"
+    # 일자리 사업 공고 없음"
     continue
